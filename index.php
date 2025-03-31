@@ -119,18 +119,18 @@ require_once "./data.php";
 				<h2 class="text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2">Experience</h2>
 
 				<div class="space-y-4">
-					<?php foreach ($experiences as $company => $job) : ?>
+					<?php foreach ($experiences as $job) : ?>
 						<div>
-							<a href="<?= $job['link']; ?>" target="_blank"
+							<a href="<?= $job->link; ?>" target="_blank"
 								class="text-lg block font-semibold mb-2 text-purple-800">
-								<?= $company ?>
+								<?= $job->company ?>
 							</a>
 							<p class="mb-2 text-gray-400">
-								<span class="font-bold">Position:</span> <?= $job['position']; ?>
+								<span class="font-bold">Position:</span> <?= $job->position; ?>
 								<br>
-								<span class="font-bold">Duration:</span> <?= $job['duration']; ?>
+								<span class="font-bold">Duration:</span> <?= $job->duration; ?>
 								<br>
-								<span class="font-bold">Description:</span> <?= $job['description']; ?>
+								<span class="font-bold">Description:</span> <?= $job->description; ?>
 								<br>
 							</p>
 						</div>

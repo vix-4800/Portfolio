@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+require_once './src/Job.php';
+
 $languages = [
 	'Russian',
 	'English',
@@ -35,25 +39,11 @@ $skillGroups = [
 	],
 ];
 
+/** @var Job[] */
 $experiences = [
-	'Интернет-Агентство КЛЕВЕР' => [
-		'position' => 'Back-end developer (Intern)',
-		'link' => 'https://clever-as.ru/',
-		'duration' => 'Jun 2023 - Jan 2024',
-		'description' => 'Back-end development using PHP, Laravel, MySQL, Redis, and Docker.',
-	],
-	'WhiteCursorRu' => [
-		'position' => 'Full-stack developer (Junior)',
-		'link' => 'https://white-cursor.ru/',
-		'duration' => 'Jan 2024 - Jul 2024',
-		'description' => 'Full-stack development using PHP, Laravel, MySQL, PostgreSQL, Redis, Docker, and GitHub Actions.',
-	],
-	'ООО "ИНФиН"' => [
-		'position' => 'Full-stack developer (Junior+/Middle)',
-		'link' => 'https://isfas.ru/',
-		'duration' => 'Sep 2024 - Feb 2025',
-		'description' => 'Full-stack development using PHP, Laravel, MySQL, PostgreSQL, Redis, Docker, and GitHub Actions.',
-	],
+	new Job('Интернет-Агентство КЛЕВЕР', 'Back-end developer (Intern)', 'https://clever-as.ru/', 'Jun 2023 - Jan 2024', 'Back-end development using PHP, Laravel, MySQL, Redis, and Docker.'),
+	new Job('WhiteCursorRu', 'Full-stack developer (Junior)', 'https://white-cursor.ru/', 'Jan 2024 - Jul 2024', 'Full-stack development using PHP, Laravel, MySQL, PostgreSQL, Redis, Docker, and GitHub Actions.'),
+	new Job('ООО "ИНФиН"', 'Full-stack developer (Junior+/Middle)', 'https://isfas.ru/', 'Sep 2024 - Feb 2025', 'Full-stack development using PHP, Laravel, MySQL, PostgreSQL, Redis, Docker, and GitHub Actions.'),
 ];
 
 $socialNetworks = [
