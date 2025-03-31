@@ -1,3 +1,3 @@
-# Using PHP Server
+## Using PHP Server
 
-php -S <host>:<port>
+php -S \<host\>:\<port\>
