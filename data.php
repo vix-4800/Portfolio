@@ -5,6 +5,7 @@ declare(strict_types=1);
 require_once './src/Job.php';
 require_once './src/Skill.php';
 require_once './src/SocialNetwork.php';
+require_once './src/Contact.php';
 
 $languages = [
 	'Russian',
@@ -49,11 +50,13 @@ $experiences = [
 	new Job('ООО "ИНФиН"', 'Full-stack developer (Junior+/Middle)', 'https://isfas.ru/', 'Sep 2024 - Feb 2025', 'Full-stack development using PHP, Laravel, MySQL, PostgreSQL, Redis, Docker, and GitHub Actions.'),
 ];
 
+/** @var SocialNetwork[] */
 $socialNetworks = [
 	new SocialNetwork('Github', 'https://github.com/vix-4800'),
 	new SocialNetwork('Linkedin', 'https://www.linkedin.com/in/vix4800'),
 ];
 
+/** @var Contact[] */
 $contacts = [
-	'Gordan.ei@protonmail.ch',
+	new Contact('Gordan.ei@protonmail.ch'),
 ];

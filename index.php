@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require_once "./data.php";
 
+$title = 'Portfolio';
+
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +14,13 @@ require_once "./data.php";
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+
+	<title>
+		<?= $title; ?>
+	</title>
+
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 	<style type="text/tailwindcss">
 		@layer components {
 			.badge {
@@ -45,7 +52,7 @@ require_once "./data.php";
 				<ul>
 					<?php foreach ($contacts as $contact) : ?>
 						<li class="flex items-center">
-							<?= $contact; ?>
+							<?= $contact->name; ?>
 						</li>
 					<?php endforeach; ?>
 				</ul>
