@@ -3,39 +3,41 @@
 declare(strict_types=1);
 
 require_once './src/Job.php';
+require_once './src/Skill.php';
 
 $languages = [
 	'Russian',
 	'English',
 ];
 
+/** @var array<string, array<Skill>> */
 $skillGroups = [
 	'Backend' => [
-		'PHP' => 'blue-500',
-		'Laravel' => 'red-500',
-		'REST API' => 'pink-500',
+		new Skill('PHP', 'blue-500'),
+		new Skill('Laravel', 'red-500'),
+		new Skill('REST API', 'pink-500'),
 	],
 	'Frontend' => [
-		'JavaScript' => 'yellow-500',
-		'Vue' => 'green-500',
-		'Nuxt' => 'teal-500',
-		'HTML' => 'red-500',
-		'CSS' => 'blue-500',
-		'Tailwind CSS' => 'purple-500',
-		'TypeScript' => 'indigo-500',
+		new Skill('JavaScript', 'yellow-500'),
+		new Skill('Vue', 'green-500'),
+		new Skill('Nuxt', 'teal-500'),
+		new Skill('HTML', 'red-500'),
+		new Skill('CSS', 'blue-500'),
+		new Skill('Tailwind CSS', 'purple-500'),
+		new Skill('TypeScript', 'indigo-500'),
 	],
 	'Databases' => [
-		'MySQL' => 'blue-800',
-		'PostgreSQL' => 'yellow-800',
-		'Redis' => 'red-800',
+		new Skill('MySQL', 'blue-800'),
+		new Skill('PostgreSQL', 'yellow-800'),
+		new Skill('Redis', 'red-800'),
 	],
 	'DevOps & Tools' => [
-		'Docker' => 'blue-600',
-		'Git' => 'gray-600',
-		'Postman' => 'orange-500',
-		'Vite' => 'teal-700',
-		'Linux' => 'red-700',
-		'GitHub Actions' => 'indigo-700',
+		new Skill('Docker', 'blue-600'),
+		new Skill('Git', 'gray-600'),
+		new Skill('Postman', 'orange-500'),
+		new Skill('Vite', 'teal-700'),
+		new Skill('Linux', 'red-700'),
+		new Skill('GitHub Actions', 'indigo-700'),
 	],
 ];
 

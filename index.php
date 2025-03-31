@@ -44,7 +44,9 @@ require_once "./data.php";
 				<h3 class="text-xl font-bold mb-2">Contacts</h3>
 				<ul>
 					<?php foreach ($contacts as $contact) : ?>
-						<li class="flex items-center"><?= $contact; ?></li>
+						<li class="flex items-center">
+							<?= $contact; ?>
+						</li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
@@ -106,8 +108,8 @@ require_once "./data.php";
 						<div>
 							<h3 class="text-lg font-semibold mb-3 text-gray-400"><?= $skillGroupName; ?></h3>
 							<div class="flex flex-wrap gap-3">
-								<?php foreach ($skillGroup as $skill => $skillColor) : ?>
-									<span class="bg-<?= $skillColor; ?> badge"><?= $skill; ?></span>
+								<?php foreach ($skillGroup as $skill) : ?>
+									<span class="bg-<?= $skill->color; ?> badge"><?= $skill->name; ?></span>
 								<?php endforeach; ?>
 							</div>
 						</div>
