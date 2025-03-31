@@ -2,14 +2,127 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+	<style>
+		.skill-badge {
+			@apply inline-block text-sm text-white px-3 py-1 rounded-full;
+		}
+	</style>
 </head>
 
-<body>
+<body class="bg-black text-white">
+	<div class="container mx-auto px-4 py-8 flex flex-col md:flex-row max-w-6xl">
+		<!-- Left Sidebar -->
+		<div class="md:w-1/4 pr-8 mb-8 md:mb-0">
+			<div class="text-center mb-8">
+				<img src="/assets/img/avatar.png" alt="Avatar" class="w-48 h-48 rounded-full mx-auto mb-4">
+				<h1 class="text-3xl font-bold">Anton </h1>
+				<span class="bg-blue-500 text-white px-2 rounded-full mt-2 inline-block">
+					Full-stack developer
+				</span>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-xl font-bold mb-4">Contacts</h3>
+				<ul>
+					<li class="flex items-center mb-2"><i class="fas fa-envelope mr-2"></i>Gordan.ei@protonmail.ch</li>
+				</ul>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-xl font-bold mb-4">Personal</h3>
+				<ul>
+					<li class="flex items-center mb-2"><i class="fas fa-birthday-cake mr-2"></i>24 years old</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="text-xl font-bold mb-4">Social Networks</h3>
+				<div class="flex justify-center space-x-4 flex-col">
+					<a href="https://github.com/vix-4800" target="_blank">Github</a>
+					<a href="https://www.linkedin.com/in/vix4800" target="_blank">Linkedin</a>
+				</div>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-xl font-bold mb-4">Languages</h3>
+				<ul>
+					<li class="flex items-center mb-2">English</li>
+				</ul>
+				<ul>
+					<li class="flex items-center mb-2">Russian</li>
+				</ul>
+			</div>
+		</div>
 
+		<!-- Right Content -->
+		<div class="md:w-3/4 pl-8 space-y-8">
+			<div>
+				<h2 class="text-2xl font-bold mb-4 border-l-4 border-blue-500 pl-2">About Me</h2>
+				<p>
+					Hi, I'm Anton 👋 I am a passionate full-stack developer.
+					<br>
+					I specialize in PHP with a focus on the Laravel framework
+				</p>
+			</div>
+
+			<div class="space-y-4">
+				<div>
+					<h2 class="text-2xl font-bold mb-4 border-l-4 border-blue-500 pl-2">Skills</h2>
+					<div>
+						<h3 class="text-lg font-semibold mb-3 text-gray-400">Backend</h3>
+						<div class="flex flex-wrap gap-3">
+							<span class="bg-blue-500 skill-badge">PHP</span>
+							<span class="bg-red-500 text-white px-3 py-1 rounded-full">Laravel</span>
+							<span class="bg-pink-500 text-white px-3 py-1 rounded-full">REST API</span>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-lg font-semibold mb-3 text-gray-400">Frontend</h3>
+					<div class="flex flex-wrap gap-3">
+						<span class="bg-yellow-500 text-white px-3 py-1 rounded-full">JavaScript</span>
+						<span class="bg-green-500 text-white px-3 py-1 rounded-full">Vue</span>
+						<span class="bg-teal-500 text-white px-3 py-1 rounded-full">Nuxt</span>
+						<span class="bg-red-500 text-white px-3 py-1 rounded-full">HTML</span>
+						<span class="bg-blue-500 text-white px-3 py-1 rounded-full">CSS</span>
+						<span class="bg-purple-500 text-white px-3 py-1 rounded-full">Tailwind CSS</span>
+						<span class="bg-indigo-500 text-white px-3 py-1 rounded-full">TypeScript</span>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-lg font-semibold mb-3 text-gray-400">DevOps & Tools</h3>
+					<div class="flex flex-wrap gap-3">
+						<span class="bg-blue-600 text-white px-3 py-1 rounded-full">Docker</span>
+						<span class="bg-gray-600 text-white px-3 py-1 rounded-full">Git</span>
+						<span class="bg-orange-500 text-white px-3 py-1 rounded-full">Postman</span>
+						<span class="bg-teal-700 text-white px-3 py-1 rounded-full">Vite</span>
+						<span class="bg-red-700 text-white px-3 py-1 rounded-full">Linux</span>
+						<span class="bg-indigo-700 text-white px-3 py-1 rounded-full">GitHub Actions</span>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-lg font-semibold mb-3 text-gray-400">Databases</h3>
+					<div class="flex flex-wrap gap-3">
+						<span class="bg-blue-800 text-white px-3 py-1 rounded-full">MySQL</span>
+						<span class="bg-yellow-800 text-white px-3 py-1 rounded-full">PostgreSQL</span>
+						<span class="bg-red-800 text-white px-3 py-1 rounded-full">Redis</span>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-4 border-l-4 border-blue-500 pl-2">Experience</h2>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-4 border-l-4 border-blue-500 pl-2">Projects</h2>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
