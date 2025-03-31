@@ -61,9 +61,11 @@ require_once "./data.php";
 			<div>
 				<h3 class="text-xl font-bold mb-2">Social Networks</h3>
 				<ul class="flex justify-center space-x-4 flex-col">
-					<?php foreach ($socialNetworks as $network => $link) : ?>
+					<?php foreach ($socialNetworks as $socialNetwork) : ?>
 						<li>
-							<a href="<?= $link; ?>" target="_blank"><?= $network; ?></a>
+							<a href="<?= $socialNetwork->link; ?>" target="_blank">
+								<?= $socialNetwork->name; ?>
+							</a>
 						</li>
 					<?php endforeach; ?>
 				</ul>

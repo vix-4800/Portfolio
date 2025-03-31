@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 require_once './src/Job.php';
 require_once './src/Skill.php';
+require_once './src/SocialNetwork.php';
 
 $languages = [
 	'Russian',
@@ -49,8 +50,8 @@ $experiences = [
 ];
 
 $socialNetworks = [
-	'Github' => 'https://github.com/vix-4800',
-	'Linkedin' => 'https://www.linkedin.com/in/vix4800',
+	new SocialNetwork('Github', 'https://github.com/vix-4800'),
+	new SocialNetwork('Linkedin', 'https://www.linkedin.com/in/vix4800'),
 ];
 
 $contacts = [
