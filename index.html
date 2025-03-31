@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio</title>
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-	<style>
-		.skill-badge {
-			@apply inline-block text-sm text-white px-3 py-1 rounded-full;
+	<style type="text/tailwindcss">
+		@layer components {
+			.badge {
+				@apply inline-block px-2 py-1 rounded-full text-sm;
+			}
 		}
 	</style>
 </head>
@@ -59,10 +60,17 @@
 		<div class="md:w-3/4 pl-8 space-y-8">
 			<div>
 				<h2 class="text-2xl font-bold mb-4 border-l-4 border-blue-500 pl-2">About Me</h2>
-				<p>
-					Hi, I'm Anton 👋 I am a passionate full-stack developer.
+				<p class="mb-2 text-center">
+					Hi, I'm <span class="font-bold">Anton</span> 👋
 					<br>
-					I specialize in PHP with a focus on the Laravel framework
+					I am a passionate full-stack developer.
+					<br>
+					I specialize in <span class="font-bold text-blue-500">PHP</span>
+					with a focus on the
+					<a href="https://laravel.com/" class="font-bold text-red-500" target="_blank">
+						Laravel
+					</a>
+					framework
 				</p>
 			</div>
 
@@ -72,9 +80,9 @@
 					<div>
 						<h3 class="text-lg font-semibold mb-3 text-gray-400">Backend</h3>
 						<div class="flex flex-wrap gap-3">
-							<span class="bg-blue-500 skill-badge">PHP</span>
-							<span class="bg-red-500 text-white px-3 py-1 rounded-full">Laravel</span>
-							<span class="bg-pink-500 text-white px-3 py-1 rounded-full">REST API</span>
+							<span class="bg-blue-500 badge">PHP</span>
+							<span class="bg-red-500 badge">Laravel</span>
+							<span class="bg-pink-500 badge">REST API</span>
 						</div>
 					</div>
 				</div>
@@ -82,34 +90,34 @@
 				<div>
 					<h3 class="text-lg font-semibold mb-3 text-gray-400">Frontend</h3>
 					<div class="flex flex-wrap gap-3">
-						<span class="bg-yellow-500 text-white px-3 py-1 rounded-full">JavaScript</span>
-						<span class="bg-green-500 text-white px-3 py-1 rounded-full">Vue</span>
-						<span class="bg-teal-500 text-white px-3 py-1 rounded-full">Nuxt</span>
-						<span class="bg-red-500 text-white px-3 py-1 rounded-full">HTML</span>
-						<span class="bg-blue-500 text-white px-3 py-1 rounded-full">CSS</span>
-						<span class="bg-purple-500 text-white px-3 py-1 rounded-full">Tailwind CSS</span>
-						<span class="bg-indigo-500 text-white px-3 py-1 rounded-full">TypeScript</span>
+						<span class="bg-yellow-500 badge">JavaScript</span>
+						<span class="bg-green-500 badge">Vue</span>
+						<span class="bg-teal-500 badge">Nuxt</span>
+						<span class="bg-red-500 badge">HTML</span>
+						<span class="bg-blue-500 badge">CSS</span>
+						<span class="bg-purple-500 badge">Tailwind CSS</span>
+						<span class="bg-indigo-500 badge">TypeScript</span>
 					</div>
 				</div>
 
 				<div>
 					<h3 class="text-lg font-semibold mb-3 text-gray-400">DevOps & Tools</h3>
 					<div class="flex flex-wrap gap-3">
-						<span class="bg-blue-600 text-white px-3 py-1 rounded-full">Docker</span>
-						<span class="bg-gray-600 text-white px-3 py-1 rounded-full">Git</span>
-						<span class="bg-orange-500 text-white px-3 py-1 rounded-full">Postman</span>
-						<span class="bg-teal-700 text-white px-3 py-1 rounded-full">Vite</span>
-						<span class="bg-red-700 text-white px-3 py-1 rounded-full">Linux</span>
-						<span class="bg-indigo-700 text-white px-3 py-1 rounded-full">GitHub Actions</span>
+						<span class="bg-blue-600 badge">Docker</span>
+						<span class="bg-gray-600 badge">Git</span>
+						<span class="bg-orange-500 badge">Postman</span>
+						<span class="bg-teal-700 badge">Vite</span>
+						<span class="bg-red-700 badge">Linux</span>
+						<span class="bg-indigo-700 badge">GitHub Actions</span>
 					</div>
 				</div>
 
 				<div>
 					<h3 class="text-lg font-semibold mb-3 text-gray-400">Databases</h3>
 					<div class="flex flex-wrap gap-3">
-						<span class="bg-blue-800 text-white px-3 py-1 rounded-full">MySQL</span>
-						<span class="bg-yellow-800 text-white px-3 py-1 rounded-full">PostgreSQL</span>
-						<span class="bg-red-800 text-white px-3 py-1 rounded-full">Redis</span>
+						<span class="bg-blue-800 badge">MySQL</span>
+						<span class="bg-yellow-800 badge">PostgreSQL</span>
+						<span class="bg-red-800 badge">Redis</span>
 					</div>
 				</div>
 			</div>
