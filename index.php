@@ -6,6 +6,10 @@ require_once "./data.php";
 
 $title = 'Portfolio';
 
+$name = 'Anton';
+$age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
+$profession = 'Full-stack developer';
+
 ?>
 
 <!DOCTYPE html>
@@ -41,9 +45,11 @@ $title = 'Portfolio';
 			class="md:w-1/3 pr-8 mb-8 md:mb-0 space-y-8 bg-gradient-to-b from-black via-[var(--main-purple-gradient)] to-black p-4">
 			<div class="text-center mb-8">
 				<img src="/assets/img/avatar.png" alt="Avatar" class="w-52 h-52 rounded-full mx-auto mb-4">
-				<h1 class="text-3xl font-bold">Anton</h1>
+				<h1 class="text-3xl font-bold">
+					<?= $name; ?>
+				</h1>
 				<span class="bg-blue-500 text-white badge mt-2">
-					Full-stack developer
+					<?= $profession; ?>
 				</span>
 			</div>
 
@@ -61,7 +67,9 @@ $title = 'Portfolio';
 			<div>
 				<h3 class="text-xl font-bold mb-2">Personal</h3>
 				<ul>
-					<li class="flex items-center" id="age"></li>
+					<li class="flex items-center">
+						<?= $age; ?> years old
+					</li>
 				</ul>
 			</div>
 
@@ -96,9 +104,9 @@ $title = 'Portfolio';
 			<section id="about">
 				<h2 class="text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2">About Me</h2>
 				<p class="mb-2 text-center">
-					Hi, I'm <span class="font-bold">Anton</span> 👋
+					Hi, I'm <span class="font-bold"><?= $name; ?></span> 👋
 					<br>
-					I am a passionate full-stack developer.
+					I am a passionate <span class="font-bold"><?= $profession; ?></span>.
 					<br>
 					I specialize in <span class="font-bold text-blue-500">PHP</span>
 					with a focus on the
@@ -154,8 +162,6 @@ $title = 'Portfolio';
 			</section>
 		</main>
 	</div>
-
-	<script src="/assets/scripts/age.js"></script>
 </body>
 
 </html>
