@@ -59,4 +59,5 @@ $socialNetworks = [
 /** @var Contact[] */
 $contacts = [
 	new Contact('Gordan.ei@protonmail.ch'),
+	new Contact('work@vix-profile.ru')
 ];
