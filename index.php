@@ -44,6 +44,10 @@ $profession = 'Full-stack developer';
 			.section-divider {
 				@apply border-b border-gray-700 my-4;
 			}
+
+			.info-list {
+				@apply flex justify-center space-x-4 space-y-1 flex-col;
+			}
 		}
 
 		:root {
@@ -69,10 +73,16 @@ $profession = 'Full-stack developer';
 
 			<div>
 				<h3 class="text-xl font-bold mb-2">Contacts</h3>
-				<ul>
+				<ul class="info-list">
 					<?php foreach ($contacts as $contact) : ?>
 						<li class="flex items-center">
-							<?= $contact->name; ?>
+							<?php if ($contact->link) : ?>
+								<a href="<?= $contact->link; ?>" target="_blank">
+									<?= $contact->name; ?>
+								</a>
+							<?php else : ?>
+								<?= $contact->name; ?>
+							<?php endif; ?>
 						</li>
 					<?php endforeach; ?>
 				</ul>
@@ -80,7 +90,7 @@ $profession = 'Full-stack developer';
 
 			<div>
 				<h3 class="text-xl font-bold mb-2">Personal</h3>
-				<ul>
+				<ul class="info-list">
 					<li class="flex items-center">
 						<?= $age; ?> years old
 					</li>
@@ -89,7 +99,7 @@ $profession = 'Full-stack developer';
 
 			<div>
 				<h3 class="text-xl font-bold mb-2">Social Networks</h3>
-				<ul class="flex justify-center space-x-4 flex-col">
+				<ul class="info-list">
 					<?php foreach ($socialNetworks as $socialNetwork) : ?>
 						<li>
 							<a href="<?= $socialNetwork->link; ?>" target="_blank">
@@ -102,14 +112,13 @@ $profession = 'Full-stack developer';
 
 			<div>
 				<h3 class="text-xl font-bold mb-2">Languages</h3>
-
-				<?php foreach ($languages as $language) : ?>
-					<ul>
+				<ul class="info-list">
+					<?php foreach ($languages as $language) : ?>
 						<li class="flex items-center">
 							<?= $language; ?>
 						</li>
-					</ul>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
+				</ul>
 			</div>
 		</aside>
 

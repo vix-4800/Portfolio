@@ -58,6 +58,6 @@ $socialNetworks = [
 
 /** @var Contact[] */
 $contacts = [
-	new Contact('Gordan.ei@protonmail.ch'),
-	new Contact('work@vix-profile.ru')
+	new Contact('Gordan.ei@protonmail.ch', 'mailto:Gordan.ei@protonmail.ch'),
+	new Contact('work@vix-profile.ru', 'mailto:work@vix-profile.ru'),
 ];

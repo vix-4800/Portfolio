@@ -6,6 +6,7 @@ final class Contact
 {
 	public function __construct(
 		public string $name,
+		public ?string $link = null,
 	) {
 		// 
 	}
