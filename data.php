@@ -9,8 +9,8 @@ require_once './src/SocialNetwork.php';
 require_once './src/Contact.php';
 
 $languages = [
-	'Russian',
-	'English',
+	translate('Russian'),
+	translate('English'),
 ];
 
 /** @var array<string, array<Skill>> */

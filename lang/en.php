@@ -28,4 +28,8 @@ return [
 	'Description' => 'Description',
 
 	'Empty section' => 'This section is currently empty. It will be updated soon.',
+
+	// Languages
+	'Russian' => 'Russian',
+	'English' => 'English',
 ];

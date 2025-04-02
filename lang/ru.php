@@ -28,4 +28,8 @@ return [
 	'Description' => 'Описание',
 
 	'Empty section' => 'Этот раздел пока пуст. Он будет скоро обновлен.',
+
+	// Languages
+	'Russian' => 'Русский',
+	'English' => 'Английский',
 ];
