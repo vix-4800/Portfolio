@@ -1,9 +1,12 @@
 <?php
 
 declare(strict_types=1);
+ob_start();
 
-require_once "./data.php";
 require_once "./src/helpers.php";
+require_once "./data.php";
+
+$current_lang = get_language();
 
 $name = 'Anton';
 $age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
@@ -17,7 +20,7 @@ $url = 'https://vix-profile.ru';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $current_lang; ?>">
 
 <head>
 	<!-- Meta -->
@@ -65,12 +68,19 @@ $url = 'https://vix-profile.ru';
 			.info-list {
 				@apply flex justify-center space-x-4 space-y-1 flex-col;
 			}
+
+			.selected-language {
+				@apply font-bold text-purple-500;
+			}
 		}
 
 		:root {
 			--main-purple-gradient: rgba(106, 13, 173, 0.25);
 		}
 	</style>
+
+	<!-- Flags -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
 </head>
 
 <body class="bg-black text-white">
@@ -141,13 +151,26 @@ $url = 'https://vix-profile.ru';
 
 		<!-- Right Content -->
 		<main class="md:w-3/4 pl-8 space-y-8">
-			<section id="about">
-				<div class="text-center mb-8">
-					<h2 class="text-3xl font-bold">Hi, I'm <?= $name; ?> 👋</h2>
-				</div>
+			<div class="flex justify-end space-x-4">
+				<ul class="border border-gray-700 flex space-x-4 px-4 py-2 rounded">
+					<?php foreach (['en', 'ru'] as $language) : ?>
+						<li>
+							<a href="?lang=<?= $language; ?>" class="<?= $current_lang === $language ? 'selected-language' : '' ?>">
+								<span class="fi fi-<?= $language === 'en' ? 'us' : 'ru' ?> mr-1"></span>
+								<?= strtoupper($language); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 
+			<div class="text-center mb-8">
+				<h2 class="text-3xl font-bold">Hi, I'm <?= $name; ?> 👋</h2>
+			</div>
+
+			<section id="about">
 				<h2 class="section-title-border">About Me</h2>
-				<p class="mb-2">
+				<p>
 					I am a passionate <span class="font-bold"><?= $profession; ?></span>.
 					<br>
 					I specialize in <span class="font-bold text-blue-500">PHP</span>
