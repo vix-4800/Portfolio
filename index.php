@@ -40,6 +40,10 @@ $profession = 'Full-stack developer';
 			.section-title-border {
 				@apply text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2;
 			}
+
+			.section-divider {
+				@apply border-b border-gray-700 my-4;
+			}
 		}
 
 		:root {
@@ -127,6 +131,8 @@ $profession = 'Full-stack developer';
 				</p>
 			</section>
 
+			<hr class="section-divider">
+
 			<section id="skills">
 				<h2 class="section-title-border">Skills</h2>
 
@@ -143,6 +149,8 @@ $profession = 'Full-stack developer';
 					<?php endforeach; ?>
 				</div>
 			</section>
+
+			<hr class="section-divider">
 
 			<section id="experience">
 				<h2 class="section-title-border">Experience</h2>
@@ -166,6 +174,8 @@ $profession = 'Full-stack developer';
 					<?php endforeach; ?>
 				</div>
 			</section>
+
+			<hr class="section-divider">
 
 			<section class="space-y-4" id="projects">
 				<h2 class="section-title-border">Projects</h2>
