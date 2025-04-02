@@ -188,8 +188,22 @@ $profession = 'Full-stack developer';
 
 			<hr class="section-divider">
 
+			<section id="interests">
+				<h2 class="section-title-border">Interests</h2>
+
+				<p class="text-gray-400">
+					This section is currently empty. It will be updated soon.
+				</p>
+			</section>
+
+			<hr class="section-divider">
+
 			<section class="space-y-4" id="projects">
 				<h2 class="section-title-border">Projects</h2>
+
+				<p class="text-gray-400">
+					This section is currently empty. It will be updated soon.
+				</p>
 			</section>
 		</main>
 	</div>
