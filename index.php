@@ -42,7 +42,7 @@ $profession = 'Full-stack developer';
 			}
 
 			.section-divider {
-				@apply border-b border-gray-700 my-4;
+				@apply border-b border-gray-700;
 			}
 
 			.info-list {
@@ -62,7 +62,7 @@ $profession = 'Full-stack developer';
 		<aside
 			class="md:w-1/3 pr-8 mb-8 md:mb-0 space-y-8 bg-gradient-to-b from-black via-[var(--main-purple-gradient)] to-black p-4">
 			<div class="text-center mb-8">
-				<img src="/assets/img/avatar.png" alt="Avatar" class="w-52 h-52 rounded-full drop-shadow-md mx-auto mb-4">
+				<img src="/assets/img/avatar.png" alt="<?= $name; ?>`s avatar" class="w-52 h-52 rounded-full drop-shadow-md mx-auto mb-4" loading="lazy">
 				<h1 class="text-3xl font-bold">
 					<?= $name; ?>
 				</h1>
