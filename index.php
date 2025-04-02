@@ -34,7 +34,11 @@ $profession = 'Full-stack developer';
 	<style type="text/tailwindcss">
 		@layer components {
 			.badge {
-				@apply inline-block px-2 py-1 rounded-full text-sm;
+				@apply inline-block px-2 py-1 rounded-full text-sm drop-shadow-md;
+			}
+
+			.section-title-border {
+				@apply text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2;
 			}
 		}
 
@@ -50,7 +54,7 @@ $profession = 'Full-stack developer';
 		<aside
 			class="md:w-1/3 pr-8 mb-8 md:mb-0 space-y-8 bg-gradient-to-b from-black via-[var(--main-purple-gradient)] to-black p-4">
 			<div class="text-center mb-8">
-				<img src="/assets/img/avatar.png" alt="Avatar" class="w-52 h-52 rounded-full mx-auto mb-4">
+				<img src="/assets/img/avatar.png" alt="Avatar" class="w-52 h-52 rounded-full drop-shadow-md mx-auto mb-4">
 				<h1 class="text-3xl font-bold">
 					<?= $name; ?>
 				</h1>
@@ -108,7 +112,7 @@ $profession = 'Full-stack developer';
 		<!-- Right Content -->
 		<main class="md:w-3/4 pl-8 space-y-8">
 			<section id="about">
-				<h2 class="text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2">About Me</h2>
+				<h2 class="section-title-border">About Me</h2>
 				<p class="mb-2 text-center">
 					Hi, I'm <span class="font-bold"><?= $name; ?></span> 👋
 					<br>
@@ -124,7 +128,7 @@ $profession = 'Full-stack developer';
 			</section>
 
 			<section id="skills">
-				<h2 class="text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2">Skills</h2>
+				<h2 class="section-title-border">Skills</h2>
 
 				<div class="space-y-4">
 					<?php foreach ($skillGroups as $skillGroupName => $skillGroup) : ?>
@@ -141,7 +145,7 @@ $profession = 'Full-stack developer';
 			</section>
 
 			<section id="experience">
-				<h2 class="text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2">Experience</h2>
+				<h2 class="section-title-border">Experience</h2>
 
 				<div class="space-y-4">
 					<?php foreach ($experiences as $job) : ?>
@@ -164,7 +168,7 @@ $profession = 'Full-stack developer';
 			</section>
 
 			<section class="space-y-4" id="projects">
-				<h2 class="text-2xl font-bold mb-4 border-l-4 border-purple-900 pl-2">Projects</h2>
+				<h2 class="section-title-border">Projects</h2>
 			</section>
 		</main>
 	</div>
