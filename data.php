@@ -54,9 +54,11 @@ $experiences = [
 $socialNetworks = [
 	new SocialNetwork('Github', 'https://github.com/vix-4800'),
 	new SocialNetwork('Linkedin', 'https://www.linkedin.com/in/vix4800'),
+	new SocialNetwork('Telegram', 'https://t.me/vix_4800'),
 ];
 
 /** @var Contact[] */
 $contacts = [
-	new Contact('Gordan.ei@protonmail.ch'),
+	new Contact('Gordan.ei@protonmail.ch', 'mailto:Gordan.ei@protonmail.ch'),
+	new Contact('work@vix-profile.ru', 'mailto:work@vix-profile.ru'),
 ];
