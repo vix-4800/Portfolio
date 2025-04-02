@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+require_once './src/helpers.php';
 require_once './src/Job.php';
 require_once './src/Skill.php';
 require_once './src/SocialNetwork.php';
@@ -14,12 +15,12 @@ $languages = [
 
 /** @var array<string, array<Skill>> */
 $skillGroups = [
-	'Backend' => [
+	translate('Backend') => [
 		new Skill('PHP', 'blue', '500'),
 		new Skill('Laravel', 'red', '500'),
 		new Skill('REST API', 'pink', '500'),
 	],
-	'Frontend' => [
+	translate('Frontend') => [
 		new Skill('JavaScript', 'yellow', '500'),
 		new Skill('Vue', 'green', '500'),
 		new Skill('Nuxt', 'teal', '500'),
@@ -28,12 +29,12 @@ $skillGroups = [
 		new Skill('Tailwind CSS', 'purple', '500'),
 		new Skill('TypeScript', 'indigo', '500'),
 	],
-	'Databases' => [
+	translate('Databases') => [
 		new Skill('MySQL', 'blue', '800'),
 		new Skill('PostgreSQL', 'yellow', '800'),
 		new Skill('Redis', 'red', '800'),
 	],
-	'DevOps & Tools' => [
+	translate('DevOps & Tools') => [
 		new Skill('Docker', 'blue', '600'),
 		new Skill('Git', 'gray', '600'),
 		new Skill('Postman', 'orange', '500'),

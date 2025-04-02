@@ -99,7 +99,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Contacts</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Contacts'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($contacts as $contact) : ?>
 						<li class="flex items-center">
@@ -116,7 +116,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Personal</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Personal'); ?></h3>
 				<ul class="info-list">
 					<li class="flex items-center">
 						<?= $age; ?> years old
@@ -125,7 +125,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Social Networks</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Social networks'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($socialNetworks as $socialNetwork) : ?>
 						<li>
@@ -138,7 +138,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Languages</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Languages'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($languages as $language) : ?>
 						<li class="flex items-center">
@@ -169,7 +169,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<section id="about">
-				<h2 class="section-title-border">About Me</h2>
+				<h2 class="section-title-border"><?= translate('About Me'); ?></h2>
 				<p>
 					I am a passionate <span class="font-bold"><?= $profession; ?></span>.
 					<br>
@@ -185,7 +185,7 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="skills">
-				<h2 class="section-title-border">Skills</h2>
+				<h2 class="section-title-border"><?= translate('Skills'); ?></h2>
 
 				<div class="space-y-4">
 					<?php foreach ($skillGroups as $skillGroupName => $skillGroup) : ?>
@@ -204,7 +204,7 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="experience">
-				<h2 class="section-title-border">Experience</h2>
+				<h2 class="section-title-border"><?= translate('Experience'); ?></h2>
 
 				<div class="space-y-4">
 					<?php foreach ($experiences as $job) : ?>
@@ -214,11 +214,11 @@ $url = 'https://vix-profile.ru';
 								<?= $job->company ?>
 							</a>
 							<p class="mb-2 text-gray-400">
-								<span class="font-bold">Position:</span> <?= $job->position; ?>
+								<span class="font-bold"><?= translate('Position'); ?>:</span> <?= $job->position; ?>
 								<br>
-								<span class="font-bold">Duration:</span> <?= $job->duration; ?>
+								<span class="font-bold"><?= translate('Duration'); ?>:</span> <?= $job->duration; ?>
 								<br>
-								<span class="font-bold">Description:</span> <?= $job->description; ?>
+								<span class="font-bold"><?= translate('Description'); ?>:</span> <?= $job->description; ?>
 								<br>
 							</p>
 						</div>
@@ -229,20 +229,20 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="interests">
-				<h2 class="section-title-border">Interests</h2>
+				<h2 class="section-title-border"><?= translate('Interests'); ?></h2>
 
 				<p class="text-gray-400">
-					This section is currently empty. It will be updated soon.
+					<?= translate('Empty section'); ?>
 				</p>
 			</section>
 
 			<hr class="section-divider">
 
 			<section class="space-y-4" id="projects">
-				<h2 class="section-title-border">Projects</h2>
+				<h2 class="section-title-border"><?= translate('Projects'); ?></h2>
 
 				<p class="text-gray-400">
-					This section is currently empty. It will be updated soon.
+					<?= translate('Empty section'); ?>
 				</p>
 			</section>
 		</main>
