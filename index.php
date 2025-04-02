@@ -116,10 +116,12 @@ $profession = 'Full-stack developer';
 		<!-- Right Content -->
 		<main class="md:w-3/4 pl-8 space-y-8">
 			<section id="about">
+				<div class="text-center mb-8">
+					<h2 class="text-3xl font-bold">Hi, I'm <?= $name; ?> 👋</h2>
+				</div>
+
 				<h2 class="section-title-border">About Me</h2>
-				<p class="mb-2 text-center">
-					Hi, I'm <span class="font-bold"><?= $name; ?></span> 👋
-					<br>
+				<p class="mb-2">
 					I am a passionate <span class="font-bold"><?= $profession; ?></span>.
 					<br>
 					I specialize in <span class="font-bold text-blue-500">PHP</span>
