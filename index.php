@@ -193,7 +193,7 @@ $url = 'https://vix-profile.ru';
 							<h3 class="text-lg font-semibold mb-3 text-gray-400"><?= $skillGroupName; ?></h3>
 							<div class="flex flex-wrap gap-3">
 								<?php foreach ($skillGroup as $skill) : ?>
-									<span class="bg-<?= $skill->color; ?> badge"><?= $skill->name; ?></span>
+									<span class="bg-<?= $skill->color; ?>-<?= $skill->colorStep; ?> badge"><?= $skill->name; ?></span>
 								<?php endforeach; ?>
 							</div>
 						</div>
