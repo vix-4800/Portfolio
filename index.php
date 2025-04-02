@@ -5,11 +5,14 @@ declare(strict_types=1);
 require_once "./data.php";
 require_once "./src/helpers.php";
 
-$title = 'Portfolio';
-
 $name = 'Anton';
 $age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
 $profession = 'Full-stack developer';
+
+$title = "{$name}'s portfolio";
+$description = "{$name}'s portfolio - {$profession}";
+$keywords = "{$name}, {$profession}, portfolio, {$name}'s portfolio, {$name}'s {$profession} portfolio";
+$url = 'https://vix-profile.ru';
 
 ?>
 
@@ -17,20 +20,34 @@ $profession = 'Full-stack developer';
 <html lang="en">
 
 <head>
+	<!-- Meta -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="<?= $name; ?>">
+	<meta name="description" content="<?= $description; ?>">
+	<meta name="keywords" content="<?= $keywords; ?>">
 
-	<title>
-		<?= $title; ?>
-	</title>
+	<title><?= $title; ?></title>
 
+	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="<?= image_path('apple-touch-icon.png'); ?>">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?= image_path('favicon-32x32.png'); ?>">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= image_path('favicon-16x16.png'); ?>">
 	<link rel="manifest" href="/site.webmanifest">
 
-	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<!-- Open Graph -->
+	<meta property="og:title" content="<?= $title; ?>">
+	<meta property="og:type" content="profile">
+	<meta property="og:image" content="<?= image_path('avatar.png'); ?>">
+	<meta property="og:url" content="<?= $url; ?>" />
+	<meta property="og:description" content="<?= $description; ?>" />
 
+	<meta property="og:site_name" content="<?= $name; ?>'s Portfolio">
+	<meta property="og:locale" content="en_US">
+	<meta property="profile:first_name" content="<?= $name; ?>">
+
+	<!-- Styles -->
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 	<style type="text/tailwindcss">
 		@layer components {
 			.badge {
@@ -62,7 +79,7 @@ $profession = 'Full-stack developer';
 		<aside
 			class="md:w-1/3 pr-8 mb-8 md:mb-0 space-y-8 bg-gradient-to-b from-black via-[var(--main-purple-gradient)] to-black p-4">
 			<div class="text-center mb-8">
-				<img src="/assets/img/avatar.png" alt="<?= $name; ?>`s avatar" class="w-52 h-52 rounded-full drop-shadow-md mx-auto mb-4" loading="lazy">
+				<img src="<?= image_path('avatar.png'); ?>" alt="<?= $name; ?>`s avatar" class="w-52 h-52 rounded-full drop-shadow-md mx-auto mb-4" loading="lazy">
 				<h1 class="text-3xl font-bold">
 					<?= $name; ?>
 				</h1>
