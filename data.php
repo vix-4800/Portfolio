@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 require_once './src/helpers.php';
-require_once './src/Job.php';
-require_once './src/Skill.php';
-require_once './src/SocialNetwork.php';
-require_once './src/Contact.php';
+require_once './src/Models/Job.php';
+require_once './src/Models/Skill.php';
+require_once './src/Models/SocialNetwork.php';
+require_once './src/Models/Contact.php';
 
 $name = translate('Anton');
 $age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
