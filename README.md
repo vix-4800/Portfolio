@@ -9,3 +9,9 @@ docker compose up -d
 ```bash
 docker compose down
 ```
+
+## Create password file
+
+```bash
+htpasswd -c ./config/nginx/.htpasswd <username>
+```
