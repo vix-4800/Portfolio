@@ -9,7 +9,15 @@ return [
 	'Social networks' => 'Социальные сети',
 	'Languages' => 'Языки',
 
+	// Personal
+	'Anton' => 'Антон',
 	'age' => 'Лет: {age}',
+	'Full-stack developer' => 'Full-stack разработчик',
+
+	// About
+	"Greetings" => 'Привет, я Антон',
+	"I am a passionate Full-stack developer." => 'Я Full-stack разработчик.',
+	"I specialize in PHP with a focus on the Laravel framework." => 'Я специализируюсь на PHP и особенно на фреймворке Laravel.',
 
 	// Headers
 	'About Me' => 'Обо мне',

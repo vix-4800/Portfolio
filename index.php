@@ -8,10 +8,6 @@ require_once "./data.php";
 
 $current_lang = get_language();
 
-$name = 'Anton';
-$age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
-$profession = 'Full-stack developer';
-
 $title = "{$name}'s portfolio";
 $description = "{$name}'s portfolio - {$profession}";
 $keywords = "{$name}, {$profession}, portfolio, {$name}'s portfolio, {$name}'s {$profession} portfolio";
@@ -165,21 +161,16 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div class="text-center mb-8">
-				<h2 class="text-3xl font-bold">Hi, I'm <?= $name; ?> 👋</h2>
+				<h2 class="text-3xl font-bold"><?= translate("Greetings") ?> 👋</h2>
 			</div>
 
 			<section id="about">
 				<h2 class="section-title-border"><?= translate('About Me'); ?></h2>
-				<p>
-					I am a passionate <span class="font-bold"><?= $profession; ?></span>.
-					<br>
-					I specialize in <span class="font-bold text-blue-500">PHP</span>
-					with a focus on the
-					<a href="https://laravel.com/" class="font-bold text-red-500" target="_blank">
-						Laravel
-					</a>
-					framework
-				</p>
+				<?php foreach ($about as $paragraph) : ?>
+					<p>
+						<?= $paragraph; ?>
+					</p>
+				<?php endforeach; ?>
 			</section>
 
 			<hr class="section-divider">

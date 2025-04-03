@@ -8,6 +8,15 @@ require_once './src/Skill.php';
 require_once './src/SocialNetwork.php';
 require_once './src/Contact.php';
 
+$name = translate('Anton');
+$age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
+$profession = translate('Full-stack developer');
+
+$about = [
+	translate("I am a passionate Full-stack developer."),
+	translate("I specialize in PHP with a focus on the Laravel framework."),
+];
+
 $languages = [
 	translate('Russian'),
 	translate('English'),
