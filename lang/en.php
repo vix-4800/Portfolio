@@ -9,6 +9,8 @@ return [
 	'Social networks' => 'Social networks',
 	'Languages' => 'Languages',
 
+	'age' => '{age} years old',
+
 	// Headers
 	'About Me' => 'About Me',
 	'Skills' => 'Skills',

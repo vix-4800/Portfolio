@@ -9,6 +9,8 @@ return [
 	'Social networks' => 'Социальные сети',
 	'Languages' => 'Языки',
 
+	'age' => 'Лет: {age}',
+
 	// Headers
 	'About Me' => 'Обо мне',
 	'Skills' => 'Навыки',

@@ -119,7 +119,7 @@ $url = 'https://vix-profile.ru';
 				<h3 class="text-xl font-bold mb-2"><?= translate('Personal'); ?></h3>
 				<ul class="info-list">
 					<li class="flex items-center">
-						<?= $age; ?> years old
+						<?= translate('age', ['age' => $age]); ?>
 					</li>
 				</ul>
 			</div>
