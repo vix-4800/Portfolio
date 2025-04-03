@@ -2,44 +2,54 @@
 
 declare(strict_types=1);
 
-require_once './src/Job.php';
-require_once './src/Skill.php';
-require_once './src/SocialNetwork.php';
-require_once './src/Contact.php';
+require_once './src/helpers.php';
+require_once './src/Models/Job.php';
+require_once './src/Models/Skill.php';
+require_once './src/Models/SocialNetwork.php';
+require_once './src/Models/Contact.php';
+
+$name = translate('Anton');
+$age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
+$profession = translate('Full-stack developer');
+
+$about = [
+	translate("I am a passionate Full-stack developer."),
+	translate("I specialize in PHP with a focus on the Laravel framework."),
+];
 
 $languages = [
-	'Russian',
-	'English',
+	translate('Russian'),
+	translate('English'),
 ];
 
 /** @var array<string, array<Skill>> */
 $skillGroups = [
-	'Backend' => [
-		new Skill('PHP', 'blue-500'),
-		new Skill('Laravel', 'red-500'),
-		new Skill('REST API', 'pink-500'),
+	translate('Backend') => [
+		new Skill('PHP', 'blue', '500'),
+		new Skill('Laravel', 'red', '500'),
+		new Skill('REST API', 'pink', '500'),
 	],
-	'Frontend' => [
-		new Skill('JavaScript', 'yellow-500'),
-		new Skill('Vue', 'green-500'),
-		new Skill('Nuxt', 'teal-500'),
-		new Skill('HTML', 'red-500'),
-		new Skill('CSS', 'blue-500'),
-		new Skill('Tailwind CSS', 'purple-500'),
-		new Skill('TypeScript', 'indigo-500'),
+	translate('Frontend') => [
+		new Skill('JavaScript', 'yellow', '500'),
+		new Skill('Vue', 'green', '500'),
+		new Skill('Nuxt', 'teal', '500'),
+		new Skill('HTML', 'red', '500'),
+		new Skill('CSS', 'blue', '500'),
+		new Skill('Tailwind CSS', 'purple', '500'),
+		new Skill('TypeScript', 'indigo', '500'),
 	],
-	'Databases' => [
-		new Skill('MySQL', 'blue-800'),
-		new Skill('PostgreSQL', 'yellow-800'),
-		new Skill('Redis', 'red-800'),
+	translate('Databases') => [
+		new Skill('MySQL', 'blue', '800'),
+		new Skill('PostgreSQL', 'yellow', '800'),
+		new Skill('Redis', 'red', '800'),
 	],
-	'DevOps & Tools' => [
-		new Skill('Docker', 'blue-600'),
-		new Skill('Git', 'gray-600'),
-		new Skill('Postman', 'orange-500'),
-		new Skill('Vite', 'teal-700'),
-		new Skill('Linux', 'red-700'),
-		new Skill('GitHub Actions', 'indigo-700'),
+	translate('DevOps & Tools') => [
+		new Skill('Docker', 'blue', '600'),
+		new Skill('Git', 'gray', '600'),
+		new Skill('Postman', 'orange', '500'),
+		new Skill('Vite', 'teal', '700'),
+		new Skill('Linux', 'red', '700'),
+		new Skill('GitHub Actions', 'indigo', '700'),
 	],
 ];
 

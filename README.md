@@ -1,3 +1,11 @@
-## Using PHP Server
+## Start the application
 
-php -S \<host\>:\<port\>
+```bash
+docker compose up -d
+```
+
+## Stop the application
+
+```bash
+docker compose down
+```

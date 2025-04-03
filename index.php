@@ -1,13 +1,12 @@
 <?php
 
 declare(strict_types=1);
+ob_start();
 
-require_once "./data.php";
 require_once "./src/helpers.php";
+require_once "./data.php";
 
-$name = 'Anton';
-$age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
-$profession = 'Full-stack developer';
+$current_lang = get_language();
 
 $title = "{$name}'s portfolio";
 $description = "{$name}'s portfolio - {$profession}";
@@ -17,7 +16,7 @@ $url = 'https://vix-profile.ru';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $current_lang; ?>">
 
 <head>
 	<!-- Meta -->
@@ -65,12 +64,19 @@ $url = 'https://vix-profile.ru';
 			.info-list {
 				@apply flex justify-center space-x-4 space-y-1 flex-col;
 			}
+
+			.selected-language {
+				@apply font-bold text-purple-500;
+			}
 		}
 
 		:root {
 			--main-purple-gradient: rgba(106, 13, 173, 0.25);
 		}
 	</style>
+
+	<!-- Flags -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
 </head>
 
 <body class="bg-black text-white">
@@ -89,7 +95,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Contacts</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Contacts'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($contacts as $contact) : ?>
 						<li class="flex items-center">
@@ -106,16 +112,16 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Personal</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Personal'); ?></h3>
 				<ul class="info-list">
 					<li class="flex items-center">
-						<?= $age; ?> years old
+						<?= translate('age', ['age' => $age]); ?>
 					</li>
 				</ul>
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Social Networks</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Social networks'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($socialNetworks as $socialNetwork) : ?>
 						<li>
@@ -128,7 +134,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2">Languages</h3>
+				<h3 class="text-xl font-bold mb-2"><?= translate('Languages'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($languages as $language) : ?>
 						<li class="flex items-center">
@@ -141,28 +147,36 @@ $url = 'https://vix-profile.ru';
 
 		<!-- Right Content -->
 		<main class="md:w-3/4 pl-8 space-y-8">
-			<section id="about">
-				<div class="text-center mb-8">
-					<h2 class="text-3xl font-bold">Hi, I'm <?= $name; ?> 👋</h2>
-				</div>
+			<div class="flex justify-end space-x-4">
+				<ul class="border border-gray-700 flex space-x-4 px-4 py-2 rounded">
+					<?php foreach (['en', 'ru'] as $language) : ?>
+						<li>
+							<a href="?lang=<?= $language; ?>" class="<?= $current_lang === $language ? 'selected-language' : '' ?>">
+								<span class="fi fi-<?= $language === 'en' ? 'us' : 'ru' ?> mr-1"></span>
+								<?= strtoupper($language); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 
-				<h2 class="section-title-border">About Me</h2>
-				<p class="mb-2">
-					I am a passionate <span class="font-bold"><?= $profession; ?></span>.
-					<br>
-					I specialize in <span class="font-bold text-blue-500">PHP</span>
-					with a focus on the
-					<a href="https://laravel.com/" class="font-bold text-red-500" target="_blank">
-						Laravel
-					</a>
-					framework
-				</p>
+			<div class="text-center mb-8">
+				<h2 class="text-3xl font-bold"><?= translate("Greetings") ?> 👋</h2>
+			</div>
+
+			<section id="about">
+				<h2 class="section-title-border"><?= translate('About Me'); ?></h2>
+				<?php foreach ($about as $paragraph) : ?>
+					<p>
+						<?= $paragraph; ?>
+					</p>
+				<?php endforeach; ?>
 			</section>
 
 			<hr class="section-divider">
 
 			<section id="skills">
-				<h2 class="section-title-border">Skills</h2>
+				<h2 class="section-title-border"><?= translate('Skills'); ?></h2>
 
 				<div class="space-y-4">
 					<?php foreach ($skillGroups as $skillGroupName => $skillGroup) : ?>
@@ -170,7 +184,7 @@ $url = 'https://vix-profile.ru';
 							<h3 class="text-lg font-semibold mb-3 text-gray-400"><?= $skillGroupName; ?></h3>
 							<div class="flex flex-wrap gap-3">
 								<?php foreach ($skillGroup as $skill) : ?>
-									<span class="bg-<?= $skill->color; ?> badge"><?= $skill->name; ?></span>
+									<span class="bg-<?= $skill->color; ?>-<?= $skill->colorStep; ?> badge"><?= $skill->name; ?></span>
 								<?php endforeach; ?>
 							</div>
 						</div>
@@ -181,7 +195,7 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="experience">
-				<h2 class="section-title-border">Experience</h2>
+				<h2 class="section-title-border"><?= translate('Experience'); ?></h2>
 
 				<div class="space-y-4">
 					<?php foreach ($experiences as $job) : ?>
@@ -191,11 +205,11 @@ $url = 'https://vix-profile.ru';
 								<?= $job->company ?>
 							</a>
 							<p class="mb-2 text-gray-400">
-								<span class="font-bold">Position:</span> <?= $job->position; ?>
+								<span class="font-bold"><?= translate('Position'); ?>:</span> <?= $job->position; ?>
 								<br>
-								<span class="font-bold">Duration:</span> <?= $job->duration; ?>
+								<span class="font-bold"><?= translate('Duration'); ?>:</span> <?= $job->duration; ?>
 								<br>
-								<span class="font-bold">Description:</span> <?= $job->description; ?>
+								<span class="font-bold"><?= translate('Description'); ?>:</span> <?= $job->description; ?>
 								<br>
 							</p>
 						</div>
@@ -206,20 +220,20 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="interests">
-				<h2 class="section-title-border">Interests</h2>
+				<h2 class="section-title-border"><?= translate('Interests'); ?></h2>
 
 				<p class="text-gray-400">
-					This section is currently empty. It will be updated soon.
+					<?= translate('Empty section'); ?>
 				</p>
 			</section>
 
 			<hr class="section-divider">
 
 			<section class="space-y-4" id="projects">
-				<h2 class="section-title-border">Projects</h2>
+				<h2 class="section-title-border"><?= translate('Projects'); ?></h2>
 
 				<p class="text-gray-400">
-					This section is currently empty. It will be updated soon.
+					<?= translate('Empty section'); ?>
 				</p>
 			</section>
 		</main>
