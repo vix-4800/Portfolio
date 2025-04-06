@@ -50,7 +50,7 @@ $url = 'https://vix-profile.ru';
 	<style type="text/tailwindcss">
 		@layer components {
 			.badge {
-				@apply inline-block px-2 py-1 rounded-full text-sm drop-shadow-md;
+				@apply inline-block px-3 py-1 rounded-full text-sm drop-shadow-md;
 			}
 
 			.section-title-border {
@@ -82,8 +82,7 @@ $url = 'https://vix-profile.ru';
 <body class="bg-black text-white">
 	<div class="container mx-auto px-4 py-8 flex flex-col md:flex-row max-w-6xl">
 		<!-- Left Sidebar -->
-		<aside
-			class="md:w-1/3 pr-8 mb-8 md:mb-0 space-y-8 bg-gradient-to-b from-black via-[var(--main-purple-gradient)] to-black p-4">
+		<aside class="md:w-1/3 pr-8 mb-8 md:mb-0 space-y-8 bg-gradient-to-b from-black via-[var(--main-purple-gradient)] to-black p-4">
 			<div class="text-center mb-8">
 				<img src="<?= image_path('avatar.png'); ?>" alt="<?= $name; ?>`s avatar" class="w-52 h-52 rounded-full drop-shadow-md mx-auto mb-4" loading="lazy">
 				<h1 class="text-3xl font-bold">
@@ -166,6 +165,7 @@ $url = 'https://vix-profile.ru';
 
 			<section id="about">
 				<h2 class="section-title-border"><?= trans('About Me'); ?></h2>
+
 				<?php foreach ($about as $paragraph) : ?>
 					<p>
 						<?= $paragraph; ?>
