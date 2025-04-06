@@ -223,7 +223,7 @@ $url = 'https://vix-profile.ru';
 				<h2 class="section-title-border"><?= trans('Interests'); ?></h2>
 
 				<p class="text-gray-400">
-					<?= trans('Empty section'); ?>
+					<?= trans('my_interests'); ?>
 				</p>
 			</section>
 
