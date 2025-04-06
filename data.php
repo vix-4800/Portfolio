@@ -7,6 +7,7 @@ require_once './src/Models/Job.php';
 require_once './src/Models/Skill.php';
 require_once './src/Models/SocialNetwork.php';
 require_once './src/Models/Contact.php';
+require_once './src/Models/Project.php';
 
 $name = trans('Anton');
 $age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
@@ -71,4 +72,9 @@ $socialNetworks = [
 $contacts = [
 	new Contact('Gordan.ei@protonmail.ch', 'mailto:Gordan.ei@protonmail.ch'),
 	new Contact('work@vix-profile.ru', 'mailto:work@vix-profile.ru'),
+];
+
+/** @var Project[] */
+$projects = [
+	// 
 ];

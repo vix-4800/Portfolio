@@ -232,9 +232,32 @@ $url = 'https://vix-profile.ru';
 			<section class="space-y-4" id="projects">
 				<h2 class="section-title-border"><?= trans('Projects'); ?></h2>
 
-				<p class="text-gray-400">
-					<?= trans('Empty section'); ?>
-				</p>
+				<?php if (empty($projects)) : ?>
+					<p class="text-gray-400">
+						<?= trans('Empty section'); ?>
+					</p>
+				<?php else : ?>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<?php foreach ($projects as $project) : ?>
+							<a class="p-4 rounded border border-gray-700 hover:bg-gray-900" href="<?= $project->link; ?>" target="_blank">
+								<h3 class="font-bold text-purple-400">
+									<?= $project->name; ?>
+								</h3>
+								<p>
+									<?= $project->description; ?>
+								</p>
+								<div class="flex flex-wrap gap-2">
+									<?php foreach ($project->technologies as $technology) : ?>
+										<span class="bg-<?= $technology->color; ?>-<?= $technology->colorStep; ?> badge">
+											<?= $technology->name; ?>
+										</span>
+									<?php endforeach; ?>
+								</div>
+								<img src="<?= $project->image; ?>" alt="<?= $project->name; ?>" class="w-full mt-4">
+							</a>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
 			</section>
 		</main>
 	</div>
