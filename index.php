@@ -95,7 +95,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2"><?= translate('Contacts'); ?></h3>
+				<h3 class="text-xl font-bold mb-2"><?= trans('Contacts'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($contacts as $contact) : ?>
 						<li class="flex items-center">
@@ -112,16 +112,16 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2"><?= translate('Personal'); ?></h3>
+				<h3 class="text-xl font-bold mb-2"><?= trans('Personal'); ?></h3>
 				<ul class="info-list">
 					<li class="flex items-center">
-						<?= translate('age', ['age' => $age]); ?>
+						<?= trans('age', ['age' => $age]); ?>
 					</li>
 				</ul>
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2"><?= translate('Social networks'); ?></h3>
+				<h3 class="text-xl font-bold mb-2"><?= trans('Social networks'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($socialNetworks as $socialNetwork) : ?>
 						<li>
@@ -134,7 +134,7 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div>
-				<h3 class="text-xl font-bold mb-2"><?= translate('Languages'); ?></h3>
+				<h3 class="text-xl font-bold mb-2"><?= trans('Languages'); ?></h3>
 				<ul class="info-list">
 					<?php foreach ($languages as $language) : ?>
 						<li class="flex items-center">
@@ -161,11 +161,11 @@ $url = 'https://vix-profile.ru';
 			</div>
 
 			<div class="text-center mb-8">
-				<h2 class="text-3xl font-bold"><?= translate("Greetings") ?> 👋</h2>
+				<h2 class="text-3xl font-bold"><?= trans("Greetings") ?> 👋</h2>
 			</div>
 
 			<section id="about">
-				<h2 class="section-title-border"><?= translate('About Me'); ?></h2>
+				<h2 class="section-title-border"><?= trans('About Me'); ?></h2>
 				<?php foreach ($about as $paragraph) : ?>
 					<p>
 						<?= $paragraph; ?>
@@ -176,7 +176,7 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="skills">
-				<h2 class="section-title-border"><?= translate('Skills'); ?></h2>
+				<h2 class="section-title-border"><?= trans('Skills'); ?></h2>
 
 				<div class="space-y-4">
 					<?php foreach ($skillGroups as $skillGroupName => $skillGroup) : ?>
@@ -195,7 +195,7 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="experience">
-				<h2 class="section-title-border"><?= translate('Experience'); ?></h2>
+				<h2 class="section-title-border"><?= trans('Experience'); ?></h2>
 
 				<div class="space-y-4">
 					<?php foreach ($experiences as $job) : ?>
@@ -205,11 +205,11 @@ $url = 'https://vix-profile.ru';
 								<?= $job->company ?>
 							</a>
 							<p class="mb-2 text-gray-400">
-								<span class="font-bold"><?= translate('Position'); ?>:</span> <?= $job->position; ?>
+								<span class="font-bold"><?= trans('Position'); ?>:</span> <?= $job->position; ?>
 								<br>
-								<span class="font-bold"><?= translate('Duration'); ?>:</span> <?= $job->duration; ?>
+								<span class="font-bold"><?= trans('Duration'); ?>:</span> <?= $job->duration; ?>
 								<br>
-								<span class="font-bold"><?= translate('Description'); ?>:</span> <?= $job->description; ?>
+								<span class="font-bold"><?= trans('Description'); ?>:</span> <?= $job->description; ?>
 								<br>
 							</p>
 						</div>
@@ -220,20 +220,20 @@ $url = 'https://vix-profile.ru';
 			<hr class="section-divider">
 
 			<section id="interests">
-				<h2 class="section-title-border"><?= translate('Interests'); ?></h2>
+				<h2 class="section-title-border"><?= trans('Interests'); ?></h2>
 
 				<p class="text-gray-400">
-					<?= translate('Empty section'); ?>
+					<?= trans('Empty section'); ?>
 				</p>
 			</section>
 
 			<hr class="section-divider">
 
 			<section class="space-y-4" id="projects">
-				<h2 class="section-title-border"><?= translate('Projects'); ?></h2>
+				<h2 class="section-title-border"><?= trans('Projects'); ?></h2>
 
 				<p class="text-gray-400">
-					<?= translate('Empty section'); ?>
+					<?= trans('Empty section'); ?>
 				</p>
 			</section>
 		</main>

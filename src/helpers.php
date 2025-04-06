@@ -79,3 +79,16 @@ function translate(string $key, array $args = []): string
 
 	return $translatedString;
 }
+
+/**
+ * An alias for the translate function.
+ *
+ * @param string $key The key to translate.
+ * @param array $args An array of arguments to replace in the translated string.
+ *
+ * @return string The translated string.
+ */
+function trans(string $key, array $args = []): string
+{
+	return translate($key, $args);
+}

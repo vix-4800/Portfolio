@@ -8,28 +8,28 @@ require_once './src/Models/Skill.php';
 require_once './src/Models/SocialNetwork.php';
 require_once './src/Models/Contact.php';
 
-$name = translate('Anton');
+$name = trans('Anton');
 $age = date_diff(date_create('2001-02-02'), date_create())->format('%y');
-$profession = translate('Full-stack developer');
+$profession = trans('Full-stack developer');
 
 $about = [
-	translate("I am a passionate Full-stack developer."),
-	translate("I specialize in PHP with a focus on the Laravel framework."),
+	trans("I am a passionate Full-stack developer."),
+	trans("I specialize in PHP with a focus on the Laravel framework."),
 ];
 
 $languages = [
-	translate('Russian'),
-	translate('English'),
+	trans('Russian'),
+	trans('English'),
 ];
 
 /** @var array<string, array<Skill>> */
 $skillGroups = [
-	translate('Backend') => [
+	trans('Backend') => [
 		new Skill('PHP', 'blue', '500'),
 		new Skill('Laravel', 'red', '500'),
 		new Skill('REST API', 'pink', '500'),
 	],
-	translate('Frontend') => [
+	trans('Frontend') => [
 		new Skill('JavaScript', 'yellow', '500'),
 		new Skill('Vue', 'green', '500'),
 		new Skill('Nuxt', 'teal', '500'),
@@ -38,12 +38,12 @@ $skillGroups = [
 		new Skill('Tailwind CSS', 'purple', '500'),
 		new Skill('TypeScript', 'indigo', '500'),
 	],
-	translate('Databases') => [
+	trans('Databases') => [
 		new Skill('MySQL', 'blue', '800'),
 		new Skill('PostgreSQL', 'yellow', '800'),
 		new Skill('Redis', 'red', '800'),
 	],
-	translate('DevOps & Tools') => [
+	trans('DevOps & Tools') => [
 		new Skill('Docker', 'blue', '600'),
 		new Skill('Git', 'gray', '600'),
 		new Skill('Postman', 'orange', '500'),
